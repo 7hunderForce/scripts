@@ -1,0 +1,16 @@
+ref_calendar = 
+VAR MinYear = YEAR("2021-01-01")
+VAR MaxYear = YEAR("2099-12-31")
+RETURN
+ADDCOLUMNS (
+    FILTER (
+        CALENDARAUTO( ),
+        AND ( YEAR([Date]) >= MinYear, YEAR([Date]) <= MaxYear )
+    ),
+    "Calendar Year", YEAR([Date]),
+    "Month Name", FORMAT([Date], "mmmm"),
+    "Month Number", FORMAT([Date], "MM"),
+    "Weekday", FORMAT([Date], "dddd"),
+    "Weekday Number", WEEKDAY([Date]),
+    "Quarter", "Q" & TRUNC ( ( MONTH ( [Date] ) - 1 ) / 3 ) + 1
+)
