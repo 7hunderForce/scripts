@@ -10,6 +10,7 @@ ADDCOLUMNS (
     "Calendar Year", YEAR([Date]),
     "Month Name", FORMAT([Date], "mmmm"),
     "Month Number", FORMAT([Date], "MM"),
+    "Week Number", WEEKNUM([Date]),
     "Weekday", FORMAT([Date], "dddd"),
     "Weekday Number", WEEKDAY([Date]),
     "Quarter", "Q" & TRUNC ( ( MONTH ( [Date] ) - 1 ) / 3 ) + 1,
