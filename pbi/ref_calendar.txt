@@ -12,7 +12,8 @@ ADDCOLUMNS (
     "Month Number", FORMAT([Date], "MM"),
     "Weekday", FORMAT([Date], "dddd"),
     "Weekday Number", WEEKDAY([Date]),
-    "Quarter", "Q" & TRUNC ( ( MONTH ( [Date] ) - 1 ) / 3 ) + 1
+    "Quarter", "Q" & TRUNC ( ( MONTH ( [Date] ) - 1 ) / 3 ) + 1,
+    "Day", FORMAT([Date], "DD") 
 )
 
 // https://community.powerbi.com/t5/Community-Blog/Creating-a-Visual-Calendar-in-Power-BI/bc-p/2116013
