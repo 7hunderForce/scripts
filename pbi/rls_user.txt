@@ -1,0 +1,1 @@
+is_user = CALCULATE (IF(MIN(ref_user[user_name]) = USERNAME(), 1, 0))
