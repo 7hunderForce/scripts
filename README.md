@@ -1,5 +1,6 @@
 # Scripts
 
 - pbi
+- postgresql
 - py
  
