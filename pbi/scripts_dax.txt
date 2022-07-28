@@ -1,0 +1,27 @@
+#=================================================================================================
+# SPLIT STRING EXAMPLE
+#=================================================================================================
+var user = table[username]
+var last = IFERROR(LEFT(user, FORMAT(SEARCH(",", user, 1, -1), 0) -1), user)
+var first = IFERROR(RIGHT(user, FORMAT(LEN(user) - SEARCH(",", user, 1, -1), 0) -1), user)
+
+=IFERROR(LEFT([ProductName],FORMAT(SEARCH("-",[ProductName],1,-1),0)-1),[ProductName])
+From <https://www.fourmoo.com/2013/05/17/dax-function-error-an-argument-of-function-left-has-the-wrong-data-type-or-has-an-invalid-value/> 
+
+
+#=================================================================================================
+# GET MAX ACROSS TABLES
+#=================================================================================================
+Quality Approval Date = 
+VAR req_id = Table_1[ID]
+VAR cont_id = CALCULATE(MAX(Table_2[Content ID]), Table_2[ID] = req_id)
+RETURN
+MAXX(
+	FILTER(
+		Table_2,
+		Table_2[ID] = req_id &&
+		Table_2[Content ID] = cont_id &&
+		Table_2[Approval Role] = "Manager"
+	),
+	Table_2[Date]
+)
