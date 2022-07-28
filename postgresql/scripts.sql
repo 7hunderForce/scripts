@@ -2,8 +2,8 @@
 ---------------------------------------------------------------------------------------------------------------
 SELECT *
   FROM information_schema.columns
- WHERE table_schema = 'costpoint_certified' 
- and column_name like '%cost%'
+ WHERE table_schema = 'schema_name' 
+ and column_name like '%some_column%'
 
 
 -- Who created object
@@ -37,5 +37,5 @@ select date_trunc('month', now()) - interval '1 day' as last_month_last_day;
 
 -- Correlation
 ---------------------------------------------------------------------------------------------------------------
-Using the PostgreSQL Correlation Function | Tutorial by Chartio
-User's guide to correlation coefficients - PMC (nih.gov)
+-- Using the PostgreSQL Correlation Function | Tutorial by Chartio
+-- User's guide to correlation coefficients - PMC (nih.gov)
